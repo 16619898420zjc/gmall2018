@@ -1,6 +1,7 @@
-package com.atguigu.gmall1108.usermanage.service;
+package com.atguigu.gmall1108.service;
 
-import com.atguigu.gmall1108.usermanage.bean.UserInfo;
+import com.atguigu.gmall1108.bean.UserAddress;
+import com.atguigu.gmall1108.bean.UserInfo;
 
 import java.util.List;
 
@@ -11,6 +12,6 @@ public interface UserManageService {
     public void delete(UserInfo userInfoQuery);
     public void addUserInfo(UserInfo userInfo);
     public void updateUserInfo(UserInfo userInfo);
-
-
+    //day02
+    public List<UserAddress> getUserAddressList(String userId);
 }

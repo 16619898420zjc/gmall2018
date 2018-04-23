@@ -1,7 +1,7 @@
 package com.atguigu.gmall1108.usermanage.controller;
 
-import com.atguigu.gmall1108.usermanage.bean.UserInfo;
-import com.atguigu.gmall1108.usermanage.service.UserManageService;
+import com.atguigu.gmall1108.bean.UserInfo;
+import com.atguigu.gmall1108.service.UserManageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;

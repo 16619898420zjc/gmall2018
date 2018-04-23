@@ -1,8 +1,10 @@
 package com.atguigu.gmall1108.usermanage.service.impl;
 
-import com.atguigu.gmall1108.usermanage.bean.UserInfo;
+import com.atguigu.gmall1108.bean.UserAddress;
+import com.atguigu.gmall1108.bean.UserInfo;
+import com.atguigu.gmall1108.usermanage.mapper.UserAddressMapper;
 import com.atguigu.gmall1108.usermanage.mapper.UserInfoMapper;
-import com.atguigu.gmall1108.usermanage.service.UserManageService;
+import com.atguigu.gmall1108.service.UserManageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
@@ -12,6 +14,8 @@ import java.util.List;
 public class UserManageServiceImpl implements UserManageService {
     @Autowired
     UserInfoMapper userInfoMapper;
+    @Autowired
+    UserAddressMapper userAddressMapper;
     public List<UserInfo> getUserInfoList(UserInfo userInfoQuery){
         List<UserInfo> userInfos=null;
         //查询所有
@@ -57,6 +61,15 @@ public class UserManageServiceImpl implements UserManageService {
 //        userInfoMapper.updateByExample( userInfo,example );
         userInfoMapper.updateByExampleSelective( userInfo,example );
         //
+    }
+
+    @Override
+    public List<UserAddress> getUserAddressList(String userId) {
+        List<UserAddress> addressList = null;
+        UserAddress userAddress = new UserAddress();
+        userAddress.setUserId(userId);
+        addressList = userAddressMapper.select(userAddress);
+        return addressList;
     }
 
     public void delete(UserInfo userInfoQuery){

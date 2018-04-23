@@ -1,4 +1,4 @@
-package com.atguigu.gmall1108.usermanage.bean;
+package com.atguigu.gmall1108.bean;
 import javax.persistence.*;
 import java.io.Serializable;
 
